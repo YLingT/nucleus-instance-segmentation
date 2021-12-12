@@ -73,9 +73,8 @@ cfg.SOLVER.IMS_PER_BATCH = 2
 # test
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7  
 cfg.TEST.DETECTIONS_PER_IMAGE = 800
-
+# dataset
 cfg.DATASETS.TRAIN = ('train')
-# DATASETS
 cfg.OUTPUT_DIR = "coco_dataset/train"
 ```
 Run code:
