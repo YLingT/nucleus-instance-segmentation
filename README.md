@@ -19,7 +19,7 @@ There are 24 images for training and 6 images for testing, each image has more t
 ## Code 
 ### 0. Download Project
 ```
-git clone https://github.com/YLingT/nucleus-instance-segmentation
+git clone https://github.com/YLingT/nucleus-instance-segmentation  
 cd nucleus-instance-segmentation
 ```
 ### 1.  Data preparing
@@ -84,12 +84,12 @@ python train.py
 ```
 The trained model will save in coco_dataset/train as model_final.pth.
 ### 3.  Testing
-Download trained weight: [best.pt](), put it coco_dataset/train folder.
+Download trained weight: [best.pt](), put it coco_dataset/train folder.  
 Test and generate answer.json:
 ```
 python test.py
 ```
-The answer.json will save in rootpath.
+The answer.json will save in rootpath.  
 Architecture in answer.json:
 ```
 [
