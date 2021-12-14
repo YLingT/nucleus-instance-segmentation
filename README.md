@@ -27,13 +27,14 @@ Run coco_format.py to generate coco format dataset.
 ```
 python coco_format.py
 ```
+Or download the [cell_instance_segmentation.json]() and put it under coco_dataset.
 The project structure are as follows:
 ```
 nucleus-instance-segmentation
 |── coco_dataset
   |── train
-  |── annotations
   |── test
+  |── cell_instance_segmentation.json
 |── coco_format.py
 |── train.py
 |── test.py
@@ -42,9 +43,9 @@ nucleus-instance-segmentation
 Training parameter setting:
 ```
 iteration          10000
-batch size         2
-learning rate      1E-3
-optimizer          Adam
+batch size         1
+learning rate      1E-2
+optimizer          SGD
 lr scheduler       StepLR
 ```
 Write the custom config file (function):
@@ -63,16 +64,15 @@ cfg.SOLVER.LR_SCHEDULER_NAME = "WarmupMultiStepLR"
 cfg.SOLVER.WARMUP_FACTOR = 0.001
 cfg.SOLVER.WARMUP_ITERS = 1000
 cfg.SOLVER.WARMUP_METHOD = 'linear'
-cfg.SOLVER.BASE_LR = 0.001
+cfg.SOLVER.BASE_LR = 0.01
 cfg.SOLVER.MAX_ITER = 10000
-cfg.SOLVER.BETAS = (0.9, 0.999)
-cfg.SOLVER.EPS = 1e-08
+cfg.SOLVER.MOMENTUM = 0.9
 cfg.SOLVER.gamma = 0.1
-cfg.SOLVER.IMS_PER_BATCH = 2
+cfg.SOLVER.IMS_PER_BATCH = 1
 
 # test
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7  
-cfg.TEST.DETECTIONS_PER_IMAGE = 800
+cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.9  
+cfg.TEST.DETECTIONS_PER_IMAGE = 500
 # dataset
 cfg.DATASETS.TRAIN = ('train')
 cfg.OUTPUT_DIR = "coco_dataset/train"
@@ -94,19 +94,20 @@ Architecture in answer.json:
 [
     {
         "image_id": 1,
-        "bbox": [
-            41.92334747314453,
-            318.66217041015625,
-            61.27983474731445,
-            348.9444580078125
-        ],
         "score": 1.0,
         "category_id": 1,
+        "bbox": [
+            975.84765625,
+            304.2831726074219,
+            17.07867431640625,
+            16.744964599609375
+        ],
         "segmentation": {
             "size": [
-                1000, 1000
+                1000,
+                1000
             ],
-            "counts": "`ZY19nn03N3M3N1N2N100000000000O101N1O2M4Lbdel0"
+            "counts": "P]jm05Qo04M1O2N2N100O10O100O1O1O2M3N^`7"
         }
     },...
 ```
