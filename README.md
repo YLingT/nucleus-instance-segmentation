@@ -27,7 +27,7 @@ Run coco_format.py to generate coco format dataset.
 ```
 python coco_format.py
 ```
-Or download the [cell_instance_segmentation.json]() and put it under coco_dataset.
+You can directly skip to step 2 if you gitclone this project.
 The project structure are as follows:
 ```
 nucleus-instance-segmentation
