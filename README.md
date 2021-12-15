@@ -23,11 +23,11 @@ git clone https://github.com/YLingT/nucleus-instance-segmentation
 cd nucleus-instance-segmentation
 ```
 ### 1.  Data preparing
+You can directly skip to step 2 if you gitclone this project.  
 Run coco_format.py to generate coco format dataset.
 ```
 python coco_format.py
 ```
-You can directly skip to step 2 if you gitclone this project.
 The project structure are as follows:
 ```
 nucleus-instance-segmentation
@@ -112,4 +112,5 @@ Architecture in answer.json:
     },...
 ```
 ### 4.  Result analysis
+Use the Mask RCNN with Resnet50 backbone to train the model and predict accuracy achieve 0.24036.
 
