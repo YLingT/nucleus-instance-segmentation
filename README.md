@@ -23,7 +23,7 @@ git clone https://github.com/YLingT/nucleus-instance-segmentation
 cd nucleus-instance-segmentation
 ```
 ### 1.  Data preparing
-You can directly skip to step 2 if you gitclone this project.  
+**You can directly skip to step 2 if you gitclone this project.**  
 Run coco_format.py to generate coco format dataset.
 ```
 python coco_format.py
