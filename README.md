@@ -83,7 +83,7 @@ python train.py
 ```
 The trained model will save in coco_dataset/train as model_final.pth.
 ### 3.  Testing
-Download trained weight: [best.pt](), put it coco_dataset/train folder.  
+Download trained weight: [best.pt](https://drive.google.com/file/d/1frWTuxZ7QPgbLXFkHU9qoyDu_NYUrF_q/view?usp=sharing), put it coco_dataset/train folder.  
 Test and generate answer.json:
 ```
 python test.py
